@@ -22,29 +22,27 @@ for i = 1:data_size
 end
 
 %Values used in sweep
-mdr(1) = 1;
-mdr(2) = 10;
-mdr(3) = 100;
-mdr(4) = 1000;
+mdr(1) = 2;
+mdr(2) = 3;
+mdr(3) = 4;
+mdr(4) = 5;
+mdr(5) = 6;
+mdr(6) = 7;
+mdr(7) = 8;
+mdr(8) = 9;
 
-bond(1) = 0.001;
-bond(2) = 0.01;
-bond(3) = 0.1;
-bond(4) = 1;
-bond(5) = 10;
-bond(6) = 100;
-bond(7) = 1000;
+bond(1) = 1;
+bond(2) = 10;
+bond(3) = 100;
+bond(4) = 1000;
 
 viscos(1) = 0.001;
 viscos(2) = 0.01;
 viscos(3) = 0.1;
 viscos(4) = 1;
-viscos(5) = 10;
-viscos(6) = 100;
-viscos(7) = 1000;
 
 %Output data
-for i = 1:4
+for i = 1:8
     mdr_file = strcat('const_mdr/mdr',num2str(mdr(i)),'.dat');
     mdr_out(i) = fopen(mdr_file,'w');
     fprintf(mdr_out(i), '%s\t %s\t %s\t %s\n', '#mdr', 'bond', 'viscos_rat', 'regime');
@@ -59,7 +57,7 @@ for i = 1:4
     
 end
 
-for i = 1:7
+for i = 1:4
    bond_file = strcat('const_bond/bond',num2str(bond(i)),'.dat');
    bond_out(i) = fopen(bond_file, 'w'); 
    fprintf(bond_out(i), '%s\t %s\t %s\t %s\n', '#mdr', 'bond', 'viscos_rat', 'regime');
